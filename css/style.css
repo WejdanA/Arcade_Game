@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+}
+div{
+  border-color:lightgreen;
+  border-width:20px;
+  border-style:outset;
+  background-color:lightgreen;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-bottom:1%;
+
+}
