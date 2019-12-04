@@ -3,6 +3,7 @@ let levels=0;
 let timer=0;
 let enemyYCoridanate=[0,150,320];//it will be used only to give y coordinate to newly created enemy object.
 let levelsElement=document.getElementById('levels');
+let roundsElement=document.getElementById('rounds');
 let timerElement=document.getElementById('timer');
 // Enemies our player must avoid
 var Enemy = function(x,y) {
@@ -20,7 +21,7 @@ var Enemy = function(x,y) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
   // the dt will ensure the game runs at the same speed for all computers.
-  this.x+=200*dt*(1);//multiply by rounds to increase the speed of the enemy and
+  this.x+=200*dt*(rounds+1);//multiply by rounds to increase the speed of the enemy and add 1 to rounds to avoid multiply by 0
   if(this.x>=500){
   this.x=-(Math.random()*300);
  }//end o if
@@ -117,6 +118,7 @@ Player.prototype.score=function(){
      } //end of else
     }// end of else if(levels===3)
   }//end of if(rounds===3)
+   roundsElement.textContent=rounds+1;//this is to dispaly the round number
 };//end of score function
 
 // the timer
